@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pendaftaran Web Klasik</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        #header, #footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        #content {
+            width: 80%;
+            margin: 20px auto; /*Centering a content*/
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+
+        /* Style form */
+        #form-tabel table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #form-tabel td {
+            padding: 8px; /*Hr bottom*/
+            border-bottom: 1px solid #ddd;
+        }
+        
+        /* Style jadwal */
+        #jadwal-tabel table {
+            border-collapse: collapse;
+            width: 50%;
+            margin-top: 15px;
+        }
+        #jadwal-tabel th, #jadwal-tabel td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <h1>Pendaftaran Akun Baru</h1>
+    </div>
+
+    <div id="content">
+
+        <h2>Formulir Pendaftaran</h2>
+        
+        <div id="form-tabel">
+            <form action="proses_pendaftaran.php" method="GET">
+                <table border="0">
+                    <tr>
+                        <td><label for="nama">Nama Lengkap:</label></td>
+                        <td><input type="text" id="nama" name="nama" required></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><label for="pass">Password:</label></td>
+                        <td><input type="password" id="pass" name="password" required></td>
+                    </tr>
+
+                    <tr>
+                        <td>Jenis Kelamin:</td>
+                        <td>
+                            <input type="radio" id="lk" name="jkelamin" value="Laki-laki" required>
+                            <label for="lk">Laki-laki</label>
+                            
+                            <input type="radio" id="pr" name="jkelamin" value="Perempuan">
+                            <label for="pr">Perempuan</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Hobi (Pilih Maks. 3):</td>
+                        <td>
+                            <input type="checkbox" id="h1" name="hobi[]" value="Membaca">
+                            <label for="h1">Membaca</label><br>
+
+                            <input type="checkbox" id="h2" name="hobi[]" value="Olahraga">
+                            <label for="h2">Olahraga</label><br>
+
+                            <input type="checkbox" id="h3" name="hobi[]" value="Coding">
+                            <label for="h3">Coding</label><br>
+                            
+                            <input type="checkbox" id="h4" name="hobi[]" value="Menyanyi">
+                            <label for="h4">Menyanyi</label>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><label for="kota">Asal Kota:</label></td>
+                        <td>
+                            <select id="kota" name="asal_kota" required>
+                                <option value="" disabled selected>-- Pilih Kota --</option>
+                                <option value="JKT">Jakarta</option>
+                                <option value="BDG">Bandung</option>
+                                <option value="SBY">Surabaya</option>
+                                <option value="SMG">Semarang</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="vertical-align: top;"><label for="komen">Komentar:</label></td>
+                        <td>
+                            <textarea id="komen" name="komentar" rows="4" cols="50"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="Daftar Sekarang">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        
+        <hr> 
+        
+        <h3>Langkah Pendaftaran Akun</h3>
+        <ol>
+            <li>Isi semua kolom data pribadi dengan benar.</li>
+            <li>Pilih hobi maksimal tiga.</li>
+            <li>Klik tombol <strong>Sekarang.</strong></li>
+            <li>Anda akan diarahkan ke halaman konfirmasi pendaftaran</li>
+        </ol>
+
+        <h3>Jadwal Praktik Dokter</h3>
+        <div id="jadwal-tabel">
+            <table>
+                <tr>
+                    <th>Hari</th>
+                    <th>Waktu Praktik</th>
+                </tr>
+                <tr>
+                    <td>Senin</td>
+                    <td>10:00 - 14:00 WIB</td>
+                </tr>
+                <tr>
+                    <td>Rabu</td>
+                    <td>15:00 - 19:00 WIB</td>
+                </tr>
+                <tr>
+                    <td>Jumat</td>
+                    <td>09:00 - 12:00 WIB</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <p>&copy;Copyright dimiliki manusia bumi! | Assisted by Sophia.</p>
+    </div>
+
+</body>
+</html>
